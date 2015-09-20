@@ -367,6 +367,11 @@ class PHPParserGeneric extends AbstractPHPParser
                 $shift = $this->parseShiftRightExpression();
                 $this->parseStaticValue();
                 break;
+            case Tokens::T_ARRAY:
+            case Tokens::T_SQUARED_BRACKET_OPEN:
+                $this->parseArray($this->builder->buildAstArray(), true);
+                $value->setValue(array()); // TODO: set real array data
+                break;
             default:
                 throw new UnexpectedTokenException(
                     $this->tokenizer->next(),

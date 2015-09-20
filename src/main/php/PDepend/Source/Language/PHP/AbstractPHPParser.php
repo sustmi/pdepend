@@ -6333,8 +6333,6 @@ abstract class AbstractPHPParser
                 case Tokens::T_CLASS_C:
                 case Tokens::T_METHOD_C:
                 case Tokens::T_BACKSLASH:
-                case Tokens::T_SQUARED_BRACKET_OPEN:
-                case Tokens::T_SQUARED_BRACKET_CLOSE:
                     // There is a default value but we don't handle it at the moment.
                     $defaultValue->setValue(null);
                     $this->consumeToken($tokenType);
