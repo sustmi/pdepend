@@ -110,4 +110,30 @@ class PHPParserGenericVersion56Test extends AbstractTest
 
         $this->assertInstanceOf('PDepend\\Source\\AST\\ASTConstantDefinition', $const);
     }
+
+    /**
+     * testArrayInConstantInitializer
+     *
+     * @return void
+     */
+    public function testArrayInConstantInitializer()
+    {
+        $class = $this->getFirstClassForTestCase();
+        $const = $class->getChild(0);
+
+        $this->assertInstanceOf('PDepend\\Source\\AST\\ASTConstantDefinition', $const);
+    }
+
+    /**
+     * testShortArrayInConstantInitializer
+     *
+     * @return void
+     */
+    public function testShortArrayInConstantInitializer()
+    {
+        $class = $this->getFirstClassForTestCase();
+        $const = $class->getChild(0);
+
+        $this->assertInstanceOf('PDepend\\Source\\AST\\ASTConstantDefinition', $const);
+    }
 }
